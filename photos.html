@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Sister 📸</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin:0; height:100vh; display:flex; justify-content:center; align-items:center;
+           font-family:Arial; background:linear-gradient(to right,#fbc2eb,#a6c1ee);}
+    .card { background:white; padding:20px; border-radius:20px; text-align:center;}
+    img { width:250px; height:300px; object-fit:cover; border-radius:15px;}
+    button { margin-top:15px; padding:10px 20px; border:none; border-radius:20px;
+             background:#ff6f91; color:white; cursor:pointer;}
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>📸 Beautiful Memories</h2>
+  <img id="slide" src="images/pic1.jpg">
+  <br>
+  <button onclick="location.href='wishes.html'">Next 💖</button>
+</div>
+
+<script>
+let photos = ["images/pic1.jpg","images/pic2.jpg","images/pic3.jpg"];
+let i = 0;
+setInterval(()=>{ i=(i+1)%photos.length; document.getElementById("slide").src = photos[i]; },2000);
+</script>
+
+</body>
+</html>
