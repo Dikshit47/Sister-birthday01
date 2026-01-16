@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love You Sister 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin:0; height:100vh; overflow:hidden; display:flex; justify-content:center;
+           align-items:center; color:white; font-family:Arial; text-align:center; background:black;}
+    .star { position:absolute; color:gold; font-size:18px; animation:fall 4s linear infinite;}
+    @keyframes fall {0%{transform:translateY(-10vh);opacity:1;}100%{transform:translateY(110vh);opacity:0;}}
+  </style>
+</head>
+<body>
+
+<h1>💖 Love You Always, Sister 💖</h1>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+setInterval(()=>{
+  const star=document.createElement("div");
+  star.className="star"; star.innerHTML="✨";
+  star.style.left=Math.random()*100+"vw";
+  document.body.appendChild(star);
+  setTimeout(()=>star.remove(),4000);
+},200);
+</script>
+
+</body>
+</html>
