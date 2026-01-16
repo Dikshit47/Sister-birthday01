@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Wishes 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin:0; height:100vh; display:flex; justify-content:center; align-items:center;
+           font-family:Arial; text-align:center; background:radial-gradient(circle,#ff9a9e,#fad0c4);}
+    .card { background:white; padding:30px; border-radius:25px;}
+    button { margin-top:20px; padding:12px 25px; border:none; border-radius:25px;
+             background:#ff4d6d; color:white; cursor:pointer;}
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>🎉 Happy Birthday 🎉</h2>
+  <p id="age"></p>
+  <p>May your life be full of happiness 😊<br>Success and smiles always follow you 🌈</p>
+  <button onclick="location.href='surprise.html'">Final Surprise 🎆</button>
+</div>
+
+<script>
+const dob=new Date("2007-01-17"); // Change DOB here
+const today=new Date();
+let age=today.getFullYear()-dob.getFullYear();
+if(today.getMonth()<dob.getMonth()||(today.getMonth()===dob.getMonth() && today.getDate()<dob.getDate())) age--;
+let count=0;
+const ageText=document.getElementById("age");
+const interval=setInterval(()=>{
+  ageText.innerHTML=`🎂 You are turning ${count} years old 🎂`;
+  count++; if(count>age) clearInterval(interval);
+},80);
+</script>
+
+</body>
+</html>
